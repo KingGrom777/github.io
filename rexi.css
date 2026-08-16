@@ -1,0 +1,102 @@
+.dark {
+  background: #111;
+  color: white;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: moveBox 10s infinite alternate;
+}
+
+@keyframes moveBox {
+  0% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+
+  25% {
+    background: blue;
+    left: 0px;
+    top: 200px;
+  }
+
+  50% {
+    background: green;
+    left: 200px;
+    top: 200px;
+  }
+
+  75% {
+    background: yellow;
+    left: 200px;
+    top: 0px;
+  }
+
+  100% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.ghost {
+  width: 80px;
+  height: 80px;
+  background: black;
+  margin-top: 50px;
+  animation: spooky 5s infinite;
+}
+
+@keyframes spooky {
+  0% {
+    transform: translate(0,0);
+    background: black;
+  }
+
+  20% {
+    transform: translate(5px,-5px);
+    background: darkred;
+  }
+
+  40% {
+    transform: translate(-5px,5px);
+    background: black;
+  }
+
+  60% {
+    transform: translate(10px,0);
+    background: purple;
+  }
+
+  80% {
+    transform: translate(-10px,0);
+    background: black;
+  }
+
+  100% {
+    transform: translate(0,0);
+    background: red;
+  }
+}
+
+function scream() {
+  document.body.style.background = "black";
+
+  let div = document.createElement("div");
+  div.textContent = "BOO!";
+  div.style.color = "red";
+  div.style.fontSize = "80px";
+  div.style.position = "fixed";
+  div.style.top = "40%";
+  div.style.left = "40%";
+
+  document.body.appendChild(div);
+
+  setTimeout(() => {
+    div.remove();
+    document.body.style.background = "white";
+  }, 1000);
+}
