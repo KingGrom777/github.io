@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Vergleich</title>
+<link rel="stylesheet" href="styledino.css">
+</head>
+
+<body>
+
+<nav class="menu">
+  <h2>🦖 DinoWorld</h2>
+  <div>
+    <a href="trex.html">T-Rex</a>
+    <a href="triceraptos.html">Triceratops</a>
+    <a href="velociraptor.html">Velociraptor</a>
+    <a href="branchiosaurus.html">Brachiosaurus</a>
+    <a href="vergleich.html">Vergleich</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>📊 Dinosaurier Vergleich</h1>
+
+<table class="big-table">
+
+<tr>
+  <th>Dinosaurier</th>
+  <th>Typ</th>
+  <th>Länge</th>
+  <th>Gewicht</th>
+  <th>Geschwindigkeit</th>
+  <th>Gefährlichkeit</th>
+</tr>
+
+<tr>
+  <td>T-Rex</td>
+  <td>Fleischfresser</td>
+  <td>12 m</td>
+  <td>9 Tonnen</td>
+  <td>25 km/h</td>
+  <td>⭐⭐⭐⭐⭐</td>
+</tr>
+
+<tr>
+  <td>Triceratops</td>
+  <td>Pflanzenfresser</td>
+  <td>9 m</td>
+  <td>12 Tonnen</td>
+  <td>20 km/h</td>
+  <td>⭐⭐⭐</td>
+</tr>
+
+<tr>
+  <td>Velociraptor</td>
+  <td>Fleischfresser</td>
+  <td>2 m</td>
+  <td>15 kg</td>
+  <td>40 km/h</td>
+  <td>⭐⭐⭐⭐</td>
+</tr>
+
+<tr>
+  <td>Brachiosaurus</td>
+  <td>Pflanzenfresser</td>
+  <td>25 m</td>
+  <td>50 Tonnen</td>
+  <td>10 km/h</td>
+  <td>⭐</td>
+</tr>
+
+</table>
+<h2>🗳️ Abstimmung: Wer ist der stärkste Dino?</h2>
+
+<div class="vote">
+  <button onclick="vote('trex')">🦖 T-Rex</button>
+  <button onclick="vote('triceratops')">🦕 Triceratops</button>
+  <button onclick="vote('raptor')">🦅 Velociraptor</button>
+  <button onclick="vote('brachio')">🦒 Brachiosaurus</button>
+</div>
+
+<h3>📊 Ergebnisse:</h3>
+
+<ul id="results"></ul>
+<script>
+  function vote(dino) {
+    let votes = JSON.parse(localStorage.getItem("votes")) || {
+      trex: 0,
+      triceratops: 0,
+      raptor: 0,
+      brachio: 0
+    };
+
+    votes[dino]++;
+    localStorage.setItem("votes", JSON.stringify(votes));
+
+    showResults();
+  }
+
+  function showResults() {
+    let votes = JSON.parse(localStorage.getItem("votes")) || {
+      trex: 0,
+      triceratops: 0,
+      raptor: 0,
+      brachio: 0
+    };
+
+    let list = document.getElementById("results");
+    list.innerHTML = "";
+
+    for (let key in votes) {
+      let li = document.createElement("li");
+      li.textContent = key + ": " + votes[key];
+      list.appendChild(li);
+    }
+  }
+
+  showResults();
+</script>
+
+
+</div>
+
+
+</body>
+</html>
