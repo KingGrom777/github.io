@@ -1,0 +1,428 @@
+/* ===== ОСНОВНЫЕ НАСТРОЙКИ ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* ===== ВЕРХНЕЕ МЕНЮ ===== */
+
+header {
+    background-color: #163b5c;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    position: relative;
+
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #8ed8ff;
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #8ed8ff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #8ed8ff;
+}
+
+
+/* ===== ГЛАВНЫЙ ЭКРАН ===== */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #dff4ff;
+    border-bottom: 1px solid #b9ddec;
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: 40px;
+}
+
+.small-title {
+    color: #287ca8;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    color: #163b5c;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #52606d;
+}
+
+
+/* ===== КНОПКИ ===== */
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons a,
+.project-button {
+    display: inline-block;
+
+    padding: 12px 24px;
+    margin: 5px;
+
+    border: 2px solid #287ca8;
+    border-radius: 6px;
+
+    background-color: #287ca8;
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-buttons a:hover,
+.project-button:hover {
+    background-color: #163b5c;
+    border-color: #163b5c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(22, 59, 92, 0.2);
+}
+
+
+/* ===== ОБЩИЕ СЕКЦИИ ===== */
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 30px;
+}
+
+section h2 {
+    text-align: center;
+
+    color: #163b5c;
+    font-size: 32px;
+
+    margin-bottom: 45px;
+}
+
+
+/* ===== БЛОКИ ===== */
+
+.section-box {
+    background-color: white;
+
+    border: 1px solid #d5e1e8;
+    border-radius: 10px;
+
+    padding: 35px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ===== НАВЫКИ ===== */
+
+.skills-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.skill-box {
+    background-color: white;
+
+    border: 1px solid #d5e1e8;
+    border-radius: 10px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+
+.skill-box:hover {
+    transform: translateY(-8px);
+    border-color: #8ed8ff;
+    box-shadow: 0 12px 25px rgba(22, 59, 92, 0.12);
+}
+
+.skill-box h3 {
+    color: #287ca8;
+    margin-bottom: 10px;
+}
+
+
+/* ===== ПРОЕКТ ===== */
+
+.project-box {
+    background-color: white;
+
+    border: 2px solid #b9ddec;
+    border-radius: 12px;
+
+    padding: 40px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.project-content h3 {
+    color: #163b5c;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.project-content p {
+    margin-bottom: 25px;
+}
+
+
+/* ===== ХОББИ ===== */
+
+.hobbies-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.hobby-box {
+    background-color: white;
+
+    border: 1px solid #d5e1e8;
+    border-radius: 10px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.hobby-box:hover {
+    transform: translateY(-5px);
+    border-color: #8ed8ff;
+}
+
+.hobby-box span {
+    font-size: 35px;
+}
+
+.hobby-box h3 {
+    margin-top: 10px;
+    color: #163b5c;
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #163b5c;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* ===== ТЕЛЕФОН ===== */
+
+@media (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .skills-container,
+    .hobbies-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}@media (max-width: 500px) {
+
+    .skills-container,
+    .hobbies-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+}/* ===== MOTIVATION ===== */
+
+.motivation-box {
+    background-color: #e8f7ff;
+    border: 2px solid #b9ddec;
+    border-radius: 12px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.motivation-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.motivation-content h3 {
+    color: #163b5c;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.motivation-content p {
+    color: #52606d;
+    margin-bottom: 15px;
+    font-size: 17px;
+}/* ===== ANIMATIONS ===== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeUp 1s ease;
+}
+
+section {
+    animation: fadeUp 0.8s ease;
+}/* ===== SHADOWS ===== */
+
+.section-box,
+.skill-box,
+.project-box,
+.hobby-box,
+.motivation-box {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.section-box:hover,
+.project-box:hover,
+.motivation-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(22, 59, 92, 0.12);
+}/* ===== MOBILE ABOUT ===== */
+
+@media (max-width: 700px) {
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-info {
+        border-left: none;
+        border-top: 2px solid #b9ddec;
+        padding-left: 0;
+        padding-top: 25px;
+    }
+
+    .motivation-box {
+        padding: 30px 20px;
+    }
+
+}
